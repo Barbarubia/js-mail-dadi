@@ -15,21 +15,21 @@ let mailStudentiClasse56 = ['adelindumitru@classe56.com', 'aldo@classe56.com', '
 const insertEmail = prompt('Inserisci la tua e-mail di appartenenza alla classe 56 di Boolean:')
 
 // Definisco una variabile esterna con valore FALSE (email non presente) e la userò all'interno di un ciclo for.
-let emailPresent = false
+let isEmailPresent = false
 
 // Genero un ciclo FOR con un indice di esecuzione che va da 0 (primo elemento dell'array) al numero precedente la lunghezza dell'array (che coincide con l'ultimo elemento dell'array).
 for (let i = 0; i < mailStudentiClasse56.length; i++) {
     // Se l'email (dato NON case-sensitive) inserita dall'utente è uguale ad uno degli elementi dell'array...
     if (mailStudentiClasse56[i].toLowerCase() == insertEmail.toLowerCase()) {
     // La variabile esterna precedentemente creata si trasforma in VERA
-    emailPresent = true;
+    isEmailPresent = true;
     }
 }
 
-// Al termine del ciclo FOR la variabile esterna emailPresent avrà un valore TRUE (email inserita presente nell'array) o un valore FALSE (email inserita non presente)
+// Al termine del ciclo FOR la variabile esterna isEmailPresent avrà un valore TRUE (email inserita presente nell'array) o un valore FALSE (email inserita non presente)
 
 // Genero un IF che mi visualizza in console il messaggio di validità o meno dell'email inserita
-if (emailPresent == true) {
+if (isEmailPresent == true) {
     console.log(`L'email inserita è valida`);
 } else {
     console.log(`L'email inserita non è valida`);
@@ -61,7 +61,7 @@ buttonValidation.addEventListener('click', function() {
     let userEmail = insertEmail.value;
 
     // Definisco una variabile esterna con valore FALSE (email non presente) e la userò all'interno di un ciclo for.
-    let emailPresent = false
+    let isEmailPresent = false
 
     // Definisco una variabile per selezionare l'elemento HTML dove verrà visualizzato il risultato
     let outputArea = document.querySelector('.validation-result');
@@ -70,14 +70,14 @@ buttonValidation.addEventListener('click', function() {
         // Se l'email (dato NON case-sensitive) inserita dall'utente è uguale ad uno degli elementi dell'array...
         if (mailStudentiClasse56[indexList].toLowerCase() == userEmail.toLowerCase()) {
         // La variabile esterna precedentemente creata si trasforma in VERA
-        emailPresent = true;
+        isEmailPresent = true;
         }
     }
     
-    // Al termine del ciclo FOR la variabile esterna emailPresent avrà un valore TRUE (email inserita presente nell'array) o un valore FALSE (email inserita non presente)
+    // Al termine del ciclo FOR la variabile esterna isEmailPresent avrà un valore TRUE (email inserita presente nell'array) o un valore FALSE (email inserita non presente)
     
     // Genero un IF che mi visualizza in console il messaggio di validità o meno dell'email inserita
-    if (emailPresent == true) {
+    if (isEmailPresent == true) {
         outputArea.innerHTML = `L'email inserita è valida`;
     } else {
         outputArea.innerHTML = `L'email inserita non è valida`;
