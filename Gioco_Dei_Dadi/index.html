@@ -5,20 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gioco dei dadi</title>
-
+    <!-- Link CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Link Libreria Font Awesome 6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
     <div class="container">
+        <h1><i class="fa-solid fa-dice"></i> Gioco dei Dadi</h1>
         <button id="play-button">Lancia il dado!</button>
-        <div id="user-score"></div>
-        <div id="computer-score"></div>
+        <div class="score-container">
+            <div class="player-score-box" id="user-score"></div>
+            <div class="player-score-box" id="computer-score"></div>
+        </div>
         <div id="final-result"></div>
     </div>
 
 
 
+    <!-- Link JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
