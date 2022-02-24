@@ -77,10 +77,15 @@ buttonValidation.addEventListener('click', function() {
     // Al termine del ciclo FOR la variabile esterna isEmailPresent avrà un valore TRUE (email inserita presente nell'array) o un valore FALSE (email inserita non presente)
     
     // Genero un IF che mi visualizza in console il messaggio di validità o meno dell'email inserita
-    if (isEmailPresent == true) {
-        outputArea.innerHTML = `L'email inserita è valida`;
+    if (userEmail == '') { // IF per il caso di campo vuoto
+        outputArea.classList.add('red');
+        outputArea.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Non hai inserito nessun dato`;
+    } else if (isEmailPresent == true) {
+        outputArea.classList.add('green');
+        outputArea.innerHTML = `<i class="fa-solid fa-user-check"></i> Ciao ${userEmail}, l'e-mail inserita è valida!`;
     } else {
-        outputArea.innerHTML = `L'email inserita non è valida`;
+        outputArea.classList.add('red');
+        outputArea.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> L'e-mail inserita non è presente nel nostro database`;
     }
 }
 );
