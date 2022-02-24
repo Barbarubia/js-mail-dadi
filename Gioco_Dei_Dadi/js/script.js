@@ -69,25 +69,69 @@ playButton.addEventListener('click', function playFunction() {
     // Genero il punteggio casuale dell'utente
     let userScore = dado[userRandomIndex];
 
+    // Associo ai punteggi ottenuti dall'utenter un'icona di Font Awesome
+    switch (userScore) {
+        case 1:
+            iconDiceUser = '<i class="fa-solid fa-dice-one"></i>';
+            break;
+        case 2:
+            iconDiceUser = '<i class="fa-solid fa-dice-two"></i>';
+            break;
+        case 3:
+            iconDiceUser = '<i class="fa-solid fa-dice-three"></i>';
+            break;
+        case 4:
+            iconDiceUser = '<i class="fa-solid fa-dice-four"></i>';
+            break;
+        case 5:
+            iconDiceUser = '<i class="fa-solid fa-dice-five"></i>';
+            break;
+        case 6:
+            iconDiceUser = '<i class="fa-solid fa-dice-six"></i>';
+            break;
+    }
+
     // Genero un numero casuale da 0 a "lunghezza array" per il computer che corrisponde all'indice dell'array
     let computerRandomIndex = Math.floor(Math.random() * dado.length);
-    // Genero il punteggio casuale dell'utente
+    // Genero il punteggio casuale del computer
     let computerScore = dado[computerRandomIndex];
 
+    // Associo ai punteggi ottenuti dal computer un'icona di Font Awesome
+    switch (computerScore) {
+        case 1:
+            iconDiceComputer = '<i class="fa-solid fa-dice-one"></i>';
+            break;
+        case 2:
+            iconDiceComputer = '<i class="fa-solid fa-dice-two"></i>';
+            break;
+        case 3:
+            iconDiceComputer = '<i class="fa-solid fa-dice-three"></i>';
+            break;
+        case 4:
+            iconDiceComputer = '<i class="fa-solid fa-dice-four"></i>';
+            break;
+        case 5:
+            iconDiceComputer = '<i class="fa-solid fa-dice-five"></i>';
+            break;
+        case 6:
+            iconDiceComputer = '<i class="fa-solid fa-dice-six"></i>';
+            break;
+    }
+
     // Stampo nella pagina il punteggio del giocatore e il punteggio del computer
-    document.getElementById('user-score').innerHTML = `Il tuo punteggio è ${userScore}.`
-    document.getElementById('computer-score').innerHTML = `Il punteggio del computer è ${computerScore}.`
+    document.getElementById('user-score').innerHTML = `Il tuo punteggio è ${userScore}.<br>${iconDiceUser}`;
+    document.getElementById('computer-score').innerHTML = `Il punteggio del computer è ${computerScore}.<br>${iconDiceComputer}`;
 
     // Seleziono l'elemento HTML dove inserirò il risultato finale
-    let resultContainer = document.getElementById('final-result')
+    let resultContainer = document.getElementById('final-result');
 
     // Genero un IF per confrontare i punteggi e stabilire chi ha vinto (o se il risultato è di parità) e chiedo all'utente se vuole provare a giocare di nuovo
     if (userScore == computerScore) {
-        resultContainer. innerHTML = `Il risultato è di parità. <button id="play-again-button">Prova ancora!</button>`
+        resultContainer. innerHTML = `Il risultato è di parità. <button id="play-again-button">Prova ancora!</button>`;
     } else if (userScore > computerScore) {
-        resultContainer. innerHTML = `HAI VINTO! Ti senti fortunato? <button id="play-again-button">Prova ancora!</button>`
+        resultContainer. innerHTML = `HAI VINTO! Ti senti fortunato? <button id="play-again-button">Prova ancora!</button>`;
     } else {
-        resultContainer. innerHTML = `HAI PERSO :( Vuoi la rivincita? <button id="play-again-button">Prova ancora!</button>`
+        resultContainer. innerHTML = `HAI PERSO :( Vuoi la rivincita? <button id="play-again-button">Prova ancora!</button>`;
     }
 
     // Seleziono l'elemento bottone a cui applicherò la funzione per giocare di nuovo
