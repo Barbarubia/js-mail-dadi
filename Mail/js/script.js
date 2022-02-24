@@ -66,9 +66,9 @@ buttonValidation.addEventListener('click', function() {
     // Definisco una variabile per selezionare l'elemento HTML dove verrà visualizzato il risultato
     let outputArea = document.querySelector('.validation-result');
 
-    for (let i = 0; i < mailStudentiClasse56.length; i++) {
+    for (let indexList = 0; indexList < mailStudentiClasse56.length; indexList++) {
         // Se l'email (dato NON case-sensitive) inserita dall'utente è uguale ad uno degli elementi dell'array...
-        if (mailStudentiClasse56[i].toLowerCase() == userEmail.toLowerCase()) {
+        if (mailStudentiClasse56[indexList].toLowerCase() == userEmail.toLowerCase()) {
         // La variabile esterna precedentemente creata si trasforma in VERA
         emailPresent = true;
         }
