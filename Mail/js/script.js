@@ -54,17 +54,17 @@ let insertEmail = document.getElementById('email');
 // Seleziono l'elemento HTML con id=validate (il bottone per verificare l'e-mail inserita)
 let buttonValidation = document.getElementById('validation');
 
-// Definisco una variabile esterna con valore FALSE (email non presente) e la userò all'interno di un ciclo for.
-let emailPresent = false
-
-// Definisco una variabile per selezionare l'elemento HTML dove verrà visualizzato il risultato
-let outputArea = document.querySelector('.validation-result');
-
 // Aggiungo un evento al click sul bottone che esegue una funzione con lo stesso ciclo FOR e l'IF della Versione 1.0
 buttonValidation.addEventListener('click', function() {
 
     // Faccio leggere alla funzione il valore dell'email inserita
     let userEmail = insertEmail.value;
+
+    // Definisco una variabile esterna con valore FALSE (email non presente) e la userò all'interno di un ciclo for.
+    let emailPresent = false
+
+    // Definisco una variabile per selezionare l'elemento HTML dove verrà visualizzato il risultato
+    let outputArea = document.querySelector('.validation-result');
 
     for (let i = 0; i < mailStudentiClasse56.length; i++) {
         // Se l'email (dato NON case-sensitive) inserita dall'utente è uguale ad uno degli elementi dell'array...
